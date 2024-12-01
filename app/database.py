@@ -9,10 +9,10 @@ async def init_db():
     global client
     try:
         client = AsyncIOMotorClient(MONGO_URI)
-        await client.admin.command('ping')  # Ping the server to confirm the connection
-        print("Successfully connected to MongoDB Atlas!")
+        await client.admin.command('ping')  
+        print("connected Successfully")
     except Exception as e:
-        print(f"Error initializing database: {e}")
+        print(f"Error connecting to database: {e}")
         raise e
 
 async def get_database():
