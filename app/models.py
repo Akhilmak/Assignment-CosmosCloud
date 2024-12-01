@@ -1,10 +1,22 @@
-from pydantic import BaseModel
+# app/models.py
 
-class Student(BaseModel):
+from pydantic import BaseModel
+from typing import Optional
+
+# Define the Address model (embedded object in Student)
+class Address(BaseModel):
+    city: str
+    country: str
+
+# Define the base student model (including Address)
+class StudentBase(BaseModel):
     name: str
     age: int
-    email: str
-    course: str
+    address: Address  # Embedded Address object
+
+# Define the response model for Student (includes the id)
+class Student(StudentBase):
+    id: str
 
     class Config:
         orm_mode = True
