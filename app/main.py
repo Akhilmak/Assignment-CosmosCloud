@@ -5,6 +5,11 @@ from app.crud import create_student, delete_student_by_id, get_student_by_id, ge
 from app.database import init_db
 
 app = FastAPI()
+
+@app.head("/")
+async def head_root():
+    await init_db()
+    return {"message": "Welcome to the API!"}
 @app.on_event("startup")
 async def startup_db():
     await init_db() 
