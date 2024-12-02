@@ -1,8 +1,8 @@
 from typing import List, Optional
 from fastapi import FastAPI, HTTPException, Query
-from app.models import StudentBase, Student, StudentUpdateRequest
-from app.crud import create_student, delete_student_by_id, get_student_by_id, get_students_with_filters, update_student_by_id
-from app.database import init_db
+from models import StudentBase, Student, StudentUpdateRequest
+from crud import create_student, delete_student_by_id, get_student_by_id, get_students_with_filters, update_student_by_id
+from database import init_db
 
 app = FastAPI()
 

@@ -1,7 +1,7 @@
 from typing import Dict, Optional
 from fastapi import HTTPException
-from app.database import get_database
-from app.models import StudentBase
+from database import get_database
+from models import StudentBase
 from bson import ObjectId
 
 
